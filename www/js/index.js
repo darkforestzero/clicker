@@ -17,26 +17,43 @@
  * under the License.
  */
 var app = {
+    clicks: 0,
+    button: null,
+    counter: null,
     // Application Constructor
-    initialize: function() {
+    initialize: function () {
         this.bindEvents();
     },
     // Bind Event Listeners
     //
     // Bind any events that are required on startup. Common events are:
     // 'load', 'deviceready', 'offline', and 'online'.
-    bindEvents: function() {
-        document.addEventListener('deviceready', this.onDeviceReady, false);
+    bindEvents: function () {
+        if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)) {
+            console.log("true phonegap application");
+            document.addEventListener("deviceready", onDeviceReady, false);
+        } else {
+            console.log("just a webpage");
+            this.onDeviceReady(); //this is the browser
+        }
     },
     // deviceready Event Handler
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
-    onDeviceReady: function() {
+    onDeviceReady: function () {
         app.receivedEvent('deviceready');
+
+        this.button = document.getElementById("theButton");
+        this.counter = document.getElementById("counter");
+        var that = this;
+        this.button.onclick = function () {
+            that.counter.innerHTML = 'Clicks: ' + (++that.clicks).toString();
+            console.log('bwaaa:' + that.clicks.toString());
+        };
     },
     // Update DOM on a Received Event
-    receivedEvent: function(id) {
+    receivedEvent: function (id) {
         var parentElement = document.getElementById(id);
         var listeningElement = parentElement.querySelector('.listening');
         var receivedElement = parentElement.querySelector('.received');
