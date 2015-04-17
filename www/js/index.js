@@ -31,7 +31,7 @@ var app = {
     bindEvents: function () {
         if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)) {
             console.log("true phonegap application");
-            document.addEventListener("deviceready", onDeviceReady, false);
+            document.addEventListener("deviceready", this.onDeviceReady, false);
         } else {
             console.log("just a webpage");
             this.onDeviceReady(); //this is the browser
