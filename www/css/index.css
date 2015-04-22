@@ -40,10 +40,6 @@ body {
     background-attachment: fixed;
     font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size: 200%;
-    height: 100%;
-    margin: 0px;
-    padding: 0px;
-    width: 100%;
 }
 /* Portrait layout (default) */
 
@@ -51,19 +47,21 @@ body {
     height: 100%;
     width: 100%;
     text-align: center;
+    position: relative;
     /* offset vertical: half of image height and text area height */
     /* offset horizontal: half of text area width */
 }
 
 #theButton {
-    background: url(../img/logo.png);
-    background-position: center center;
+    background: url(../img/gift.svg);
+    background-position: top center;
     background-repeat: no-repeat;
+    background-clip: padding-box;
     width: 100%;
-    height: 50%;
+    height: 100%;
     padding: 200px 0px 0px 0px;
     /* image height is 200px (bottom 20px are overlapped with text) */
-
+    
     -webkit-transition: 0.5s ease;
 }
 
