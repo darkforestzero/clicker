@@ -34,7 +34,6 @@ var app = {
         game.counter = document.getElementById("counter");
         game.button.onclick = function () {
             game.counter.innerHTML = 'Clicks: ' + (++game.clicks).toString();
-            console.log('bwaaa:' + game.clicks.toString());
         };
     },
     // Update DOM on a Received Event

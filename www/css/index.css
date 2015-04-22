@@ -39,33 +39,20 @@ body {
     background-image: -webkit-gradient( linear, left top, left bottom, color-stop(0, #A7A7A7), color-stop(0.51, #E4E4E4));
     background-attachment: fixed;
     font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-    font-size: 12px;
+    font-size: 200%;
     height: 100%;
     margin: 0px;
     padding: 0px;
-    text-transform: uppercase;
     width: 100%;
 }
 /* Portrait layout (default) */
 
 .app {
+    height: 100%;
     width: 100%;
     text-align: center;
     /* offset vertical: half of image height and text area height */
     /* offset horizontal: half of text area width */
-}
-/* Landscape layout (with min-width) */
-
-@media screen and (min-aspect-ratio: 1/1) and (min-width: 400px) {
-    .app {
-        background-position: left center;
-        padding: 75px 0px 75px 170px;
-        /* padding-top + padding-bottom + text area = image height */
-        
-        margin: -90px 0px 0px -198px;
-        /* offset vertical: half of image height */
-        /* offset horizontal: half of image width and text area width */
-    }
 }
 
 #theButton {
@@ -73,10 +60,10 @@ body {
     background-position: center center;
     background-repeat: no-repeat;
     width: 100%;
-    padding: 180px 0px 0px 0px;
+    height: 50%;
+    padding: 200px 0px 0px 0px;
     /* image height is 200px (bottom 20px are overlapped with text) */
 
-    margin: -115px 0px 0px -112px;
     -webkit-transition: 0.5s ease;
 }
 
@@ -85,11 +72,12 @@ body {
 }
 
 .counter {
-    font-size: 24px;
+    font-size: 200%;
     font-weight: normal;
     margin: 0px;
     overflow: visible;
     padding: 0px;
+    font-size: 25%;
     text-align: center;
 }
 
@@ -97,7 +85,7 @@ body {
     border-radius: 4px;
     -webkit-border-radius: 4px;
     color: #FFFFFF;
-    font-size: 12px;
+    font-size: 50%;
     margin: 0px 30px;
     padding: 2px 0px;
 }
@@ -139,4 +127,14 @@ body {
 .blink {
     animation: fade 3000ms infinite;
     -webkit-animation: fade 3000ms infinite;
+}
+
+#deviceready {
+    width: 25%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.verticalSpacer {
+    height: 33%;
 }
