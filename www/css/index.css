@@ -49,25 +49,8 @@ body {
 /* Portrait layout (default) */
 
 .app {
-    background: url(../img/logo.png) no-repeat center top;
-    /* 170px x 200px */
-    
-    position: absolute;
-    /* position in the center of the screen */
-    
-    left: 50%;
-    top: 50%;
-    height: 50px;
-    /* text area height */
-    
-    width: 225px;
-    /* text area width */
-    
+    width: 100%;
     text-align: center;
-    padding: 180px 0px 0px 0px;
-    /* image height is 200px (bottom 20px are overlapped with text) */
-    
-    margin: -115px 0px 0px -112px;
     /* offset vertical: half of image height and text area height */
     /* offset horizontal: half of text area width */
 }
@@ -83,6 +66,22 @@ body {
         /* offset vertical: half of image height */
         /* offset horizontal: half of image width and text area width */
     }
+}
+
+#theButton {
+    background: url(../img/logo.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 100%;
+    padding: 180px 0px 0px 0px;
+    /* image height is 200px (bottom 20px are overlapped with text) */
+
+    margin: -115px 0px 0px -112px;
+    -webkit-transition: 0.5s ease;
+}
+
+#theButton:active {
+    -webkit-transform: scale(1.5, 1.5);
 }
 
 .counter {
