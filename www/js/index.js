@@ -1,6 +1,4 @@
 var app = {
-    // TODO: make everything use game.vars instead of this.vars
-    // Application Constructor
     initialize: function () {
         this.game = {
             clicks: 0,
@@ -9,16 +7,15 @@ var app = {
         };
         this.bindEvents();
     },
-    // Bind Event Listeners
-    //
+
     // Bind any events that are required on startup. Common events are:
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function () {
         if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)) {
-            console.log("true phonegap application");
+            console.log("THIS IS A PHONE");
             document.addEventListener("deviceready", this.onDeviceReady, false);
         } else {
-            console.log("just a webpage");
+            console.log("THIS IS A WEBPAGE");
             this.onDeviceReady(); //this is the browser
         }
     },
@@ -30,8 +27,11 @@ var app = {
         this.receivedEvent('deviceready');
 
         var game = this.game;
+document.addElement()
         game.button = document.getElementById("theButton");
         game.counter = document.getElementById("counter");
+
+
         game.button.onclick = function () {
             game.counter.innerHTML = 'Clicks: ' + (++game.clicks).toString();
         };
@@ -48,3 +48,5 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
+
+app.initialize();
